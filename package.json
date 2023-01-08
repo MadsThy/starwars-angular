@@ -2,11 +2,11 @@
   "name": "starwars",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "e2e": "npx cypress run",
+    "e2e-open": "npx cypress open"
   },
   "private": true,
   "dependencies": {
