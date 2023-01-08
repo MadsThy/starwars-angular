@@ -1,0 +1,58 @@
+.actors
+  display: grid
+  grid-column-gap: 16px
+  grid-row-gap: 16px
+  grid-template-columns: repeat(1, 1fr)
+  min-height: 350px
+
+  @media (min-width: 400px)
+    grid-template-columns: repeat(2, 1fr)
+
+  @media (min-width: 600px)
+    grid-template-columns: repeat(3, 1fr)
+
+  @media (min-width: 800px )
+    grid-template-columns: repeat(4, 1fr)
+
+  @media (min-width: 1000px)
+    grid-template-columns: repeat(5, 1fr)
+
+.actor
+  background-color: #31677c
+  border-radius: 8px
+  color: white
+  transition: 0.3s
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+  padding: 8px
+  height: 150px
+  display: flex
+  text-align: center
+  justify-content: center
+  align-items: center
+  text-transform: uppercase
+  font-weight: bold
+  font-family: arial
+  cursor: pointer
+
+  &:hover
+    background-color: #4687a6
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+
+.actions
+  display: grid
+  grid-template-columns: 150px 150px
+  grid-column-gap: 16px
+  margin-top: 32px
+
+.paginator
+  margin-top: 32px
+
+  a
+    cursor: pointer
+    margin: auto 8px
+
+    &.active
+      font-weight: bolder
+
+    &:hover
+      font-weight: bold

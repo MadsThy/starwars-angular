@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { ActorDetailsService } from 'src/app/shared/services';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ActorDetailsStore } from './actor-details.store';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterModule],
   selector: 'app-actor-details',
   standalone: true,
   styles: [``],
-  template: ` <p>actor-details works!</p> `,
+  template: `<button routerLink="..">Back</button>`,
 })
 export class ActorDetailsComponent {
-  constructor(private service: ActorDetailsService) {
-    this.service.initialize();
-  }
+  constructor(private store: ActorDetailsStore) {}
 }
