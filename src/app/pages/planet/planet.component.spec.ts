@@ -1,19 +1,18 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ActorsComponent } from './actors.component';
+import { PlanetComponent } from './planet.component';
 
-describe('FrontpageComponent', () => {
-  let component: ActorsComponent;
-  let fixture: ComponentFixture<ActorsComponent>;
-  let mockService = {};
+describe('PlanetComponent', () => {
+  let component: PlanetComponent;
+  let fixture: ComponentFixture<PlanetComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ActorsComponent, HttpClientTestingModule, RouterTestingModule],
+      imports: [PlanetComponent, HttpClientTestingModule, RouterTestingModule],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ActorsComponent);
+    fixture = TestBed.createComponent(PlanetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

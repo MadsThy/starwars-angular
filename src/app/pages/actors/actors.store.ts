@@ -1,26 +1,26 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
 import { take } from 'rxjs';
-import { Actor, ActorsService } from 'src/app/shared/services';
+import { Actor, ActorsService } from './actors.service';
 
-interface CurrentPage {
+export interface CurrentPage {
   pageNum: number;
   prevPage: string | null;
   nextPage: string | null;
   actors: Actor[];
 }
 interface ActorsState {
-  IsLoading: boolean;
+  isLoading: boolean;
   currentPage: CurrentPage | null;
   totalPages: number;
-  allPages: Array<CurrentPage>; // Pages arrays by index of page
+  allPages: Array<CurrentPage>;
 }
 
 @Injectable({ providedIn: 'root' })
 export class ActorsStore extends ComponentStore<ActorsState> {
-  readonly isLoading$ = this.select((state) => state.IsLoading);
+  readonly isLoading$ = this.select((state) => state.isLoading);
   private readonly setIsLoading = this.updater(
-    (state, IsLoading: boolean): ActorsState => ({ ...state, IsLoading })
+    (state, isLoading: boolean): ActorsState => ({ ...state, isLoading })
   );
 
   readonly totalPages$ = this.select((state) => state.totalPages);
@@ -48,7 +48,7 @@ export class ActorsStore extends ComponentStore<ActorsState> {
   );
 
   constructor(private service: ActorsService) {
-    super({ currentPage: null, allPages: [], IsLoading: false, totalPages: 0 });
+    super({ currentPage: null, allPages: [], isLoading: false, totalPages: 0 });
 
     this.initializeStore();
   }

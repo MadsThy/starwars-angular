@@ -41,7 +41,7 @@ import { ActorsStore } from './actors.store';
       <div class="paginator">
         Jump to page:
         <a
-          *ngFor="let number of amountPages | async"
+          *ngFor="let number of amountPages$ | async"
           [ngClass]="{ active: number === currentPage.pageNum }"
           (click)="
             goToPage(
@@ -58,7 +58,7 @@ import { ActorsStore } from './actors.store';
 export class ActorsComponent {
   currentPage$ = this.store.currentPage$;
   isLoading$ = this.store.isLoading$;
-  amountPages = this.store.totalPages$.pipe(
+  amountPages$ = this.store.totalPages$.pipe(
     map((number) => Array.from({ length: number }, (v, k) => k + 1))
   );
 
