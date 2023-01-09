@@ -6,7 +6,7 @@
     "build": "ng build",
     "test": "jest --coverage",
     "e2e": "npx cypress run",
-    "e2e-open": "npx cypress open"
+    "e2e-watch": "npx cypress open"
   },
   "private": true,
   "dependencies": {
